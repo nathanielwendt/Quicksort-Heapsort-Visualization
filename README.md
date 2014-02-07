@@ -1,4 +1,5 @@
-CPSC-223-Data-Structures
+Quicksort-Heapsort-Visualization 
 ========================
 
-Highlights from my data structures and CS2 courses
+This program steps through the Quicksort and Heapsort algorithms
+describing each stage and uses colors and visuals to demonstrate the process
