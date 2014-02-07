@@ -1,0 +1,261 @@
+
+**************************************
+*****   WELCOME TO THE ALGORITHM *****
+*****    VISUALIZATION PROGRAM!  *****
+**************************************
+
+/
+
+*** 1) QUICKSORT ALGORITHM ********************
+*** This algorithm works by partitioning an array
+*** into portions in reference to an index.  Then
+*** there are two categories, less than index and
+*** greater than the idnex.  From there the index
+*** recursively calls the sort again on the less
+*** than portion and again on the greater than
+*** portion until each portion is sorted.
+
+*** For this demonstration:
+	- P - pivot or index
+	- U - the first unknown value
+	- LL - last less than value
+
+	- Numbers in YELLOW
+		Indexes of the array
+	- Numbers in RED
+		Sorted into > pivot category
+	- Numbers in BLUE
+		Sorted into >= pivot category
+
+*** Enjoy the Quicksort!
+/
+
+This is the unsorted array we will start with of size 7
+/
+FIRST PARTITION ---- INDEX 0-7 ------
+We have chosen index 0 as the pivot to compare values with.
+Our first call to partition in quicksort is on the entire array.
+Since we haven't compared yet, U is pointing at the next index.
+
+/
+
+FIRST PARTITION ---- INDEX 0-7 ------
+Since the value U was pointing at was less than pivots item (4 < 5)
+the partition "less than or equal to pivot" is created and is in BLUE 
+and LL is pointing to the last value of its only value which is index 1.
+
+/
+
+FIRST PARTITION ---- INDEX 0-7 ------
+The next unknown was 6 and is greater than pivots 5 so another partition
+called "greater than pivot" is created and is in RED.  U is incremented.
+
+/
+
+FIRST PARTITION ---- INDEX 0-7 ------
+Unknowns 1 is less than pivots 5 so swap 1 with 6 and increment last less
+and first unknown
+
+/
+
+FIRST PARTITION ---- INDEX 0-7 ------
+Unknowns 7 is greater than pivots 5 so simply increment first unknown
+and the "greater than pivot" category grows to two items.
+
+/
+
+FIRST PARTITION ---- INDEX 0-7 ------
+Unknowns 9 is greater than pivots 5 so increment first unknown and
+the "greater than pivot" category grows to three items.
+
+/
+
+FIRST PARTITION ---- INDEX 0-7 ------
+Unknowns 2 is less than pivot so it is swapped with 6 and last less is
+incremented.
+
+Then, since the array is partitioned, the final step is to swap pivot with
+last less.  Then, Quicksort can recursively call Partition again on the array
+to the left of the pivot and to the right of the pivot.
+
+/
+SECOND PARTITION ---- INDEX 0-2 ------
+Now we call Partition on the array to the left of pivot.  The new pivot
+is chosen as the first item again, and first unknown is the next item to compare
+
+/
+
+SECOND PARTITION ---- INDEX 0-2 ------
+Since first unknown's 4 is less than pivots two.  The "greater than pivot"
+category is created and first unknown is incremented.
+
+/
+
+SECOND PARTITION ---- INDEX 0-2 ------
+First unknown's 1 is less than pivots 2 so it is in the "less than or equal"
+category and lastless is pointing at that item.
+
+Then, to finish the partition, we swap pivot with lastless (2 with 1) so that
+pivot is in between the "greater than" and the "less than or equal to" partitions.
+
+/
+
+THIRD PARTITION ---- INDEX 4-6 ------
+Now we call Partition on the array to the right of the pivot from the first
+partition. The new pivot is chosen as the first item again, 
+and first unknown is the next item to compare
+
+/
+
+THIRD PARTITION ---- INDEX 4-6 ------
+Since unknown's 2 is greater than pivots 1, the "greater than pivot" category
+is created in RED and first uknown is incremented.
+
+/
+
+THIRD PARTITION ---- INDEX 4-6 ------
+Unknowns 4 is greater than pivots 1 so first unkown is incremented past the array
+and stops.  Then, since the array is partitioned, pivot switches with last less.
+Since there is no last less, pivot and last less are equal and no effective swap
+occurs.  This portion of the array is now sorted.
+
+/
+Now the left and right partitions are joined on either side of the first partitions
+pivot and the array is effectively sorted!
+/
+
+
+*** 1) HEAPSORT ALGORITHM ********************
+*** This algorithm works by what is referred to as
+*** a heap.  A heap in this case is actually simply
+*** an array that is visualized as a tree.  This 'tree'
+*** then is either empty or has a left subtree and
+*** or a right subtree.  The items in the heap are
+*** loosly sorted to where the parent node will always
+*** be a larger value than its child (maxheap).
+*** Our job is to create an initial heap, and by doing this
+*** we are putting the largest item to the top of the heap
+*** Then we swap the bottom-rightmost leaf with the root, 
+*** adjust the tree so it is a heap again. By doing this we 
+*** are putting the largest at the end of the tree or array and
+*** ignoring it from there.  Each time the treey/array will be
+*** smaller than before until it only has one item and is sorted!
+
+*** For this demonstration:
+	- Numbers in YELLOW
+		Indexes of the array
+	- Numbers in MAGENTA
+		Child item to compare
+	- Numbers in GREEN
+		Parent item to compare
+
+*** Enjoy the HeapSort!
+
+
+/
+
+To start, the algorithm reads the array from left to right
+and creates an initial tree from top to bottom, left to right. Then,
+it begins checking if the structure is a heap by looking at subheaps.
+Since each subheap in the last level is obviously a heap since it is
+one item, the algorithm then checks the next row for subheaps
+and sees that 6 is greater than 9 and that they must be swapped
+
+/
+
+Once 6 and 9 are swapped, 4 is greater than 7 and is above it in the
+tree so it also needs to be swapped.
+
+/
+
+In the final initial pass through the tree, it sees the last subheap
+(which is the entire rest of the heap) is not sorted properly.  5
+is less than both of its children 7 and 9 and so the algorithm sees
+which one of them is larger (9) and swaps them.
+
+/
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+/
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+/
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+/
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+/
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+/
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+/
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+/
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+/
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+/
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+/
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+/
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+/
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+/
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+/
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+/
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+/
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+/
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+/
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+/
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+/
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+/
+
